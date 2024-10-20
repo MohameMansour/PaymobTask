@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.example.paymobtask.ui.movielist.model.Movie" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movie_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_white"
+        android:elevation="5dp"
+        android:padding="10dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/movie_image_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedCornersImageView"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="start"
+            android:text="@{movie.originalTitle}"
+            android:textColor="@color/teal_700"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/favorite"
+            app:layout_constraintStart_toEndOf="@id/movie_image_iv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Titanic" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/favorite"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_not_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/movie_name_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_date_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="5dp"
+            android:text="@{movie.releaseDate}"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/favorite"
+            app:layout_constraintStart_toEndOf="@id/movie_image_iv"
+            app:layout_constraintTop_toBottomOf="@id/movie_name_tv"
+            tools:text="Aug 23, 2024" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/voteAverageProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:max="100"
+            android:progress="0"
+            app:indicatorColor="@color/red"
+            app:indicatorSize="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/movie_image_iv"
+            app:trackColor="@color/grey"
+            app:trackThickness="5dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/vote_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/voteAverageProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/voteAverageProgressBar"
+            app:layout_constraintStart_toStartOf="@id/voteAverageProgressBar"
+            app:layout_constraintTop_toTopOf="@id/voteAverageProgressBar"
+            tools:text="50%" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

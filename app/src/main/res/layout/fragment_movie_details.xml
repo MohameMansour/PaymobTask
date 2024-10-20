@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.moviedetails.MovieDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="start"
+            android:padding="5dp"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imgMovie"
+            app:layout_constraintEnd_toStartOf="@id/favorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Movie Name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/favorite"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/title"
+            app:layout_constraintTop_toTopOf="@id/title"
+            tools:src="@drawable/ic_favorite" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgMovie"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toTopOf="@id/voteAverageProgressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:shapeAppearance="@style/roundedCornersImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="start"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/imgMovie"
+            app:layout_constraintTop_toBottomOf="@id/imgMovie"
+            tools:text="Language: en" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/voteAverageProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:max="100"
+            android:progress="0"
+            app:indicatorColor="@color/red"
+            app:indicatorSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgMovie"
+            app:trackColor="@color/grey"
+            app:trackThickness="5dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/vote_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/voteAverageProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/voteAverageProgressBar"
+            app:layout_constraintStart_toStartOf="@id/voteAverageProgressBar"
+            app:layout_constraintTop_toTopOf="@id/voteAverageProgressBar"
+            tools:text="50%" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCountAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/language"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/language"
+            tools:text="9.9" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/voteAverageProgressBar"
+            tools:text="Very excited to share my latest shots. This time I made shots about the cinema booking app. Let me know what you think about this. I hope you like it. Feel free to feedback and please press if you like it ❤ Enjoy!" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
